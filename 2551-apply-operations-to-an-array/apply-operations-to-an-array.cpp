@@ -9,22 +9,15 @@ public:
                 continue;
             }
         }
-       vector<int>res;
-
-       for(auto it: nums){
-        if(it != 0)
-            res.push_back(it);
-       }
-       int zeroes = n - res.size();
-       int m = res.size();
-       int i = 0, j = 0, k = 0;
-       while(m--){
-        nums[k++] = res[i++];
-       }
-       while(zeroes--){
-        nums[k++] = 0;
-       }
-       return nums;
-
+        
+        int i = 0, j = 0;
+        while(j<n){
+            if(nums[j] != 0){
+                swap(nums[i], nums[j]);
+                i++; 
+            }
+            j++;
+        }
+         return nums;
     }
 };
